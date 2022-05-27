@@ -1,6 +1,7 @@
-const express = require ('express')
-const path = require('path')
+
+const path = require ('path')
 const hbs = require ('hbs')
+const express = require ('express')
 const geocode= require('./utils/geocode')
 const forecast = require ('./utils/forecast') 
 const chalk = require('chalk')
@@ -9,13 +10,17 @@ const port = process.env.PORT || 3000
 const app = express ()
 
 //Define paths for express config
-const publicdirectory = path.join(__dirname,'../public')
+const publicdirectory = path.join(__dirname,'../public/')
 const partialspath = path.join(__dirname,'../src/partials')
+const viewspath = path.join(__dirname,'../src/views')
+
 
 //Setup handlebars engine and views location
 app.use(express.static(publicdirectory))
 app.set('view engine','hbs')
+app.set ('views',viewspath)
 hbs.registerPartials(partialspath)
+
 
 console.log(partialspath)
 
