@@ -15,10 +15,11 @@ const partialspath = path.join(__dirname,'../src/partials')
 const viewspath = path.join(__dirname,'../src/views')
 
 
+
 //Setup handlebars engine and views location
 app.use(express.static(publicdirectory))
 app.set('view engine','hbs')
-app.set ('views',viewspath)
+app.set ('views', viewspath)
 hbs.registerPartials(partialspath)
 
 
@@ -104,5 +105,5 @@ app.get('*',(req,res) => {
 
 
 app.listen(port, ()=>{
- console.log('El servidor esta arriba'+ port)
+ console.log('El servidor esta arriba: '+ port)
 })
