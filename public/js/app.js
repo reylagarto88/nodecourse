@@ -9,7 +9,7 @@ const msjtwo = document.querySelector('#msj-2')
 weatherForm.addEventListener('submit',(e) => {
   e.preventDefault()
 
-  const loc = search.value
+  const loc = searchterm.value
 
   msjone.textContent='Cargando...'
   msjtwo.textContent=''
